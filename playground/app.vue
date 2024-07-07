@@ -1,16 +1,14 @@
 <template>
-  <ClientOnly>
-    <NuxtSignaturePad
-      ref="signature"
-      height="400px"
-      width="950px"
-      :max-width="options.maxWidth"
-      :min-width="options.minWidth"
-      :options="{
-        penColor: options.penColor, backgroundColor: options.backgroundColor,
-      }"
-    />
-  </ClientOnly>
+  <NuxtSignaturePad
+    ref="signature"
+    height="400px"
+    width="950px"
+    :max-width="options.maxWidth"
+    :min-width="options.minWidth"
+    :options="{
+      penColor: options.penColor, backgroundColor: options.backgroundColor,
+    }"
+  />
 </template>
 
 <script setup>
