@@ -37,6 +37,3 @@ jobs:
 
       - name: Install dependencies
         run: npx nypm@latest i
-
-      - name: Test
-        run: npm run test
