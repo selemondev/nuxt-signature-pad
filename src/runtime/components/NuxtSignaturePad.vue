@@ -208,12 +208,10 @@ defineExpose({
 })
 
 onMounted(() => {
-  console.log(import.meta.server)
+  setTimeout(() => {
+    draw()
+  }, 100)
 })
-
-setTimeout(() => {
-  console.log(document.getElementById(canvasOptions.value.canvasUuid))
-}, 7000)
 
 onBeforeUnmount(() => {
   const resizeHandler = () => {
