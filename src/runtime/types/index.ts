@@ -61,6 +61,7 @@ export interface CanvasOptions {
   throttle: number
   minWidth?: number
   maxWidth?: number
+  dotSize?: number
   option: Options
   canvasUuid: string
 }
