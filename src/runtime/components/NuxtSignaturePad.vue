@@ -33,6 +33,7 @@ const emits = defineEmits<{
 const canvasOptions = ref<CanvasOptions>({
   signaturePad: {
   },
+  dotSize: 0.5,
   minWidth: 2,
   maxWidth: 2,
   throttle: 16,
