@@ -4,7 +4,7 @@
 import SignaturePad from 'signature_pad'
 import { nanoid } from 'nanoid'
 import type { CanvasOptions, Props, WaterMarkObj } from '../types'
-import { onBeforeUnmount, onMounted, ref, watch } from '#imports'
+import { onMounted, onUnmounted, ref, watch } from '#imports'
 
 defineOptions({
   name: 'VueSignaturePad',
@@ -55,8 +55,6 @@ function saveSignature(format?: string) {
 function clearCanvas() {
   return canvasOptions.value.signaturePad && canvasOptions.value.signaturePad.clear && canvasOptions.value.signaturePad.clear()
 }
-
-const canvas = document.getElementById(canvasOptions.value.canvasUuid) as HTMLCanvasElement | any
 
 function fromDataURL(url: string) {
   return canvasOptions.value.signaturePad && canvasOptions.value.signaturePad.fromDataURL && canvasOptions.value.signaturePad.fromDataURL(url)
@@ -140,7 +138,9 @@ function handleAfterUpdateStroke() {
   return canvasOptions.value.signaturePad.addEventListener && canvasOptions.value.signaturePad.addEventListener('afterUpdateStroke', () => {
     emits('afterUpdateStroke', 'Signature after update')
   })
-}
+};
+
+const controller = new AbortController()
 function draw() {
   const canvas = document.getElementById(canvasOptions.value.canvasUuid) as HTMLCanvasElement | any
   if (!canvas) {
@@ -154,7 +154,10 @@ function draw() {
   const resizeHandler = () => {
     resizeCanvas(canvas)
   }
-  window.addEventListener('resize', resizeHandler)
+
+  window.addEventListener('resize', resizeHandler, {
+    signal: controller.signal,
+  })
   resizeCanvas(canvas)
   if (props.defaultUrl !== '') {
     fromDataURL(props.defaultUrl)
@@ -214,11 +217,8 @@ onMounted(() => {
   }, 100)
 })
 
-onBeforeUnmount(() => {
-  const resizeHandler = () => {
-    resizeCanvas(canvas)
-  }
-  window.removeEventListener('resize', resizeHandler)
+onUnmounted(() => {
+  controller.abort()
 })
 </script>
 
