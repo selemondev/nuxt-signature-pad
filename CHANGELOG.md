@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.1.1
+
+[compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.1.1...v1.1.1)
+
+### 💅 Refactors
+
+- **app:** Use AbortController() for event cleanups ([7366087](https://github.com/selemondev/nuxt-signature-pad/commit/7366087))
+
+### ❤️ Contributors
+
+- Selemondev-triply ([@selemon-dev](http://github.com/selemon-dev))
+
 ## v1.1.0
 
 
