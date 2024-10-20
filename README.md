@@ -36,7 +36,7 @@ npx nuxi@latest module add nuxt-signature-pad
 2. Add `Typescript` as a dev dependency by running the command below:
 
 ```bash
-npm install --save-dev Typescript
+npm install --save-dev typescript
 ```
 
 That's it! You can now use nuxt-signature-pad in your Nuxt application ✨
