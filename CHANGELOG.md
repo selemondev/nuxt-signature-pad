@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v1.1.4
+
+[compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.1.3...v1.1.4)
+
+### 🏡 Chore
+
+- **deps-dev:** Bump nuxt from 3.12.3 to 3.12.4 ([18a15ee](https://github.com/selemondev/nuxt-signature-pad/commit/18a15ee))
+- Update dependencies ([46bc970](https://github.com/selemondev/nuxt-signature-pad/commit/46bc970))
+- Update pnpm-lock file ([b295df4](https://github.com/selemondev/nuxt-signature-pad/commit/b295df4))
+- Add eslint comments ([6043a0b](https://github.com/selemondev/nuxt-signature-pad/commit/6043a0b))
+- Add pnpm-lock file ([f65b514](https://github.com/selemondev/nuxt-signature-pad/commit/f65b514))
+- Downgrade deps ([261d4ef](https://github.com/selemondev/nuxt-signature-pad/commit/261d4ef))
+- Downgrade typescript to v5.6.3 ([d680e7b](https://github.com/selemondev/nuxt-signature-pad/commit/d680e7b))
+- Downgrade typescript to v5.6.3 ([1731d25](https://github.com/selemondev/nuxt-signature-pad/commit/1731d25))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v1.1.3
 
 [compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.1.2...v1.1.3)
