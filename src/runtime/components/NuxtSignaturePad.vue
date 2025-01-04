@@ -1,3 +1,4 @@
+<!-- eslint-disable @typescript-eslint/no-unused-expressions -->
 <!-- eslint-disable @typescript-eslint/ban-ts-comment -->
 <!-- eslint-disable @typescript-eslint/unified-signatures -->
 <!-- eslint-disable ts/ban-ts-comment -->

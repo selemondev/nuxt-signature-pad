@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type */
 import { defineNuxtModule, createResolver, addComponent } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
