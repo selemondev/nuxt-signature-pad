@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@nuxt/kit':
-        specifier: ^3.15.0
+        specifier: ^3.12.3
         version: 3.15.0(magicast@0.3.5)(rollup@4.29.1)
       nanoid:
         specifier: ^5.0.9
@@ -28,7 +28,7 @@ importers:
         specifier: ^0.8.4
         version: 0.8.4(@nuxt/kit@3.15.0(magicast@0.3.5)(rollup@4.29.1))(nuxi@3.17.2)(typescript@5.7.2)(vue-tsc@2.2.0(typescript@5.7.2))
       '@nuxt/schema':
-        specifier: ^3.15.0
+        specifier: ^3.12.3
         version: 3.15.0(magicast@0.3.5)(rollup@4.29.1)
       '@nuxt/test-utils':
         specifier: ^3.15.1
