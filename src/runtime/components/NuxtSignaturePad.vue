@@ -6,7 +6,7 @@
 <script setup lang='ts'>
 import SignaturePad from 'signature_pad'
 import { nanoid } from 'nanoid'
-import { onMounted, onUnmounted, ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref, watch, watchEffect } from 'vue'
 import type { CanvasOptions, Point, Props, Signature, WaterMarkObj } from '../types'
 
 defineOptions({
@@ -175,11 +175,9 @@ function draw() {
   }
 }
 
-watch(() => props.options.penColor, (newVal) => {
-  if (newVal) {
-    canvasOptions.value.option.penColor = newVal
-    canvasOptions.value.signaturePad.penColor = newVal
-  }
+watchEffect(() => {
+  canvasOptions.value.option.penColor = props.options.penColor
+  canvasOptions.value.signaturePad.penColor = props.options.penColor
 })
 
 watch(() => props.minWidth, (newVal) => {
@@ -187,14 +185,14 @@ watch(() => props.minWidth, (newVal) => {
     canvasOptions.value.minWidth = newVal
     canvasOptions.value.signaturePad.minWidth = newVal
   }
-})
+}, { immediate: true })
 
 watch(() => props.maxWidth, (newVal) => {
   if (newVal) {
     canvasOptions.value.maxWidth = newVal
     canvasOptions.value.signaturePad.maxWidth = newVal
   }
-})
+}, { immediate: true })
 
 watch(
   () => props.disabled,
