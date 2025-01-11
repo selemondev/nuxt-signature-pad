@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.1.5
+
+[compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.1.4...v1.1.5)
+
+### 🩹 Fixes
+
+- Initialisation of stroke thickness and penColor ([9c68c3e](https://github.com/selemondev/nuxt-signature-pad/commit/9c68c3e))
+
+### 🏡 Chore
+
+- Fix description ([9085527](https://github.com/selemondev/nuxt-signature-pad/commit/9085527))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v1.1.4
 
 [compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.1.3...v1.1.4)
