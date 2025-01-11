@@ -7,11 +7,11 @@
 
 ### 🩹 Fixes
 
-- Initialisation of stroke thickness and penColor ([9c68c3e](https://github.com/selemondev/nuxt-signature-pad/commit/9c68c3e))
+- Initialisation of stroke thickness and pen colour ([9c68c3e](https://github.com/selemondev/nuxt-signature-pad/commit/9c68c3e))
 
 ### 🏡 Chore
 
-- Fix description ([9085527](https://github.com/selemondev/nuxt-signature-pad/commit/9085527))
+- Fix package.json file description ([9085527](https://github.com/selemondev/nuxt-signature-pad/commit/9085527))
 
 ### ❤️ Contributors
 
