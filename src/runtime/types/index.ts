@@ -201,12 +201,11 @@ export interface Props {
   defaultUrl?: string
 }
 
-export interface CanvasOptions {
+export interface CanvasOptions extends Options {
   signaturePad: Signature
   throttle: number
   minWidth?: number
   maxWidth?: number
   dotSize?: number
-  option: Options
   canvasUuid: string
 }
