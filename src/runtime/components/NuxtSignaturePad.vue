@@ -176,8 +176,12 @@ function draw() {
 }
 
 watchEffect(() => {
+  // Update penColor
   canvasOptions.value.option.penColor = props.options.penColor
   canvasOptions.value.signaturePad.penColor = props.options.penColor
+  // Update backgroundColor
+  canvasOptions.value.option.backgroundColor = props.options.backgroundColor
+  canvasOptions.value.signaturePad.backgroundColor = props.options.backgroundColor
 })
 
 watch(() => props.minWidth, (newVal) => {
