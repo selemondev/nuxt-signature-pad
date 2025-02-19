@@ -11,12 +11,14 @@
   />
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { Signature } from '#nuxt-signature-pad'
+
 const options = ref({
   penColor: 'rgb(0,0,0)',
   backgroundColor: 'rgb(255, 255, 255)',
   maxWidth: 2,
   minWidth: 2,
 })
-const signature = ref()
+const signature = ref<Signature>()
 </script>

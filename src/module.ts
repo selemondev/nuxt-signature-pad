@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-import { defineNuxtModule, createResolver, addComponent } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, addComponent, addTemplate } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
-export interface ModuleOptions {}
+export interface ModuleOptions { }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -17,6 +17,18 @@ export default defineNuxtModule<ModuleOptions>({
       name: 'NuxtSignaturePad',
       filePath: resolve('./runtime/components/NuxtSignaturePad.vue'),
       mode: 'client',
+    })
+    const templateSignatureClient = addTemplate({
+      filename: 'types/index.ts',
+      getContents: () => `
+      import type * as Signature from '${resolve('./runtime/types/index.ts')}'
+      declare global {
+        export type Signature = types.Signature
+      }`,
+    })
+
+    _nuxt.hook('prepare:types', ({ references }) => {
+      references.push({ path: templateSignatureClient.dst })
     })
   },
 })
