@@ -42,10 +42,8 @@ const canvasOptions = ref<CanvasOptions>({
   minWidth: 2,
   maxWidth: 2,
   throttle: 16,
-  option: {
-    backgroundColor: 'rgb(255,255,255)',
-    penColor: 'rgb(0, 0, 0)',
-  },
+  backgroundColor: props.options.backgroundColor,
+  penColor: props.options.penColor,
   canvasUuid: `canvas${nanoid()}`,
 })
 
@@ -176,8 +174,12 @@ function draw() {
 }
 
 watchEffect(() => {
-  canvasOptions.value.option.penColor = props.options.penColor
+  // Update penColor
+  canvasOptions.value.penColor = props.options.penColor
   canvasOptions.value.signaturePad.penColor = props.options.penColor
+  // Update backgroundColor
+  canvasOptions.value.backgroundColor = props.options.backgroundColor
+  canvasOptions.value.signaturePad.backgroundColor = props.options.backgroundColor
 })
 
 watch(() => props.minWidth, (newVal) => {
