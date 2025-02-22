@@ -1,6 +1,33 @@
 # Changelog
 
 
+## v1.2.0
+
+[compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.1.5...v1.2.0)
+
+### 🚀 Enhancements
+
+- Export signature type ([965b956](https://github.com/selemondev/nuxt-signature-pad/commit/965b956))
+
+### 🩹 Fixes
+
+- NuxtSignaturePad component to pass backgroundColor properly to the signature_pad options ([bb188b9](https://github.com/selemondev/nuxt-signature-pad/commit/bb188b9))
+- Properly passing options to signature_pad ([6bca825](https://github.com/selemondev/nuxt-signature-pad/commit/6bca825))
+
+### 💅 Refactors
+
+- Signature types export ([06f6519](https://github.com/selemondev/nuxt-signature-pad/commit/06f6519))
+
+### 🏡 Chore
+
+- Update CHANGELOG.md file ([c5516aa](https://github.com/selemondev/nuxt-signature-pad/commit/c5516aa))
+- **deps-dev:** Bump vitest from 2.1.8 to 2.1.9 ([caee5de](https://github.com/selemondev/nuxt-signature-pad/commit/caee5de))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+- Arnaud Gissinger ([@mathix420](http://github.com/mathix420))
+
 ## v1.1.5
 
 [compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.1.4...v1.1.5)
