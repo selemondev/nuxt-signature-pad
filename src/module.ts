@@ -20,15 +20,30 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     const templateSignatureClient = addTemplate({
-      filename: '../dist/types.d.ts',
+      filename: 'types/signature.d.ts',
       getContents: () => `
-      declare module 'nuxt-signature-pad/types' {
-        export * from '${resolve('./runtime/types/index')}'
+      import type * as types from '${resolve('./runtime/types/index')}'
+      
+      declare module '#imports' {
+        export type { 
+          Point,
+          CurveControl,
+          Bezier,
+          SignaturePadOptions,
+          BasicPoint,
+          PointGroupOptions,
+          PointGroup,
+          Options,
+          WaterMarkObj,
+          Signature,
+          Props,
+          CanvasOptions
+        } from '${resolve('./runtime/types/index')}'
       }
       
       declare module '@vue/runtime-core' {
         interface ComponentCustomProperties {
-          $signature: import('${resolve('./runtime/types/index')}').Signature
+          $signature: types.Signature
         }
       }`,
     })
