@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.3.0
+
+[compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.2.0...v1.3.0)
+
+### 💅 Refactors
+
+- Signature types export ([539bb38](https://github.com/selemondev/nuxt-signature-pad/commit/539bb38))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v1.2.0
 
 [compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.1.5...v1.2.0)
