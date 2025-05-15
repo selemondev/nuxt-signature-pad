@@ -51,8 +51,14 @@ function isCanvasEmpty(): boolean {
   return canvasOptions.value.signaturePad.isEmpty()
 }
 
-function saveSignature(format?: string): string {
-  return format ? canvasOptions.value.signaturePad.toDataURL(format) : canvasOptions.value.signaturePad.toDataURL()
+function saveSignature(format?: string) {
+  const dataURL = format ? canvasOptions.value.signaturePad.toDataURL(format) : canvasOptions.value.signaturePad?.toDataURL()
+  const link = document.createElement('a')
+  link.href = dataURL ?? ''
+  link.download = `signature-${nanoid()?.slice(0, 4)}`
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
 }
 
 function clearCanvas() {
@@ -228,7 +234,14 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div :style="{ width: props.width, height: props.height }" @touchmove.prevent>
-    <canvas :id="canvasOptions.canvasUuid" style="width: 100%; height: 100%;" :data-uid="canvasOptions.canvasUuid" />
+  <div
+    :style="{ width: props.width, height: props.height }"
+    @touchmove.prevent
+  >
+    <canvas
+      :id="canvasOptions.canvasUuid"
+      style="width: 100%; height: 100%;"
+      :data-uid="canvasOptions.canvasUuid"
+    />
   </div>
 </template>
