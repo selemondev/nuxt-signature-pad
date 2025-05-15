@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.4.0
+
+[compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.3.0...v1.4.0)
+
+### 🚀 Enhancements
+
+- Save signature ([a90daa2](https://github.com/selemondev/nuxt-signature-pad/commit/a90daa2))
+
+### 🏡 Chore
+
+- **deps-dev:** Bump nuxt from 3.15.0 to 3.16.0 ([2a09f42](https://github.com/selemondev/nuxt-signature-pad/commit/2a09f42))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v1.3.0
 
 [compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.2.0...v1.3.0)
