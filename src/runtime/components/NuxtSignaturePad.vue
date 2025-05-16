@@ -52,13 +52,7 @@ function isCanvasEmpty(): boolean {
 }
 
 function saveSignature(format?: string) {
-  const dataURL = format ? canvasOptions.value.signaturePad.toDataURL(format) : canvasOptions.value.signaturePad?.toDataURL()
-  const link = document.createElement('a')
-  link.href = dataURL ?? ''
-  link.download = `signature-${nanoid()?.slice(0, 4)}`
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
+  return format ? canvasOptions.value.signaturePad.toDataURL(format) : canvasOptions.value.signaturePad?.toDataURL()
 }
 
 function clearCanvas() {
