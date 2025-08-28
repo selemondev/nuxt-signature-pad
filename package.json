@@ -46,7 +46,7 @@
     "changelogen": "^0.5.7",
     "eslint": "^9.34.0",
     "nuxt": "^3.18.1",
-    "typescript": "5.6.3",
+    "typescript": "5.7.3",
     "vitest": "^2.1.9",
     "vue-tsc": "^2.2.12"
   }
