@@ -45,7 +45,7 @@
     "@types/signature_pad": "^4.0.0",
     "changelogen": "^0.5.7",
     "eslint": "^9.34.0",
-    "nuxt": "^3.18.1",
+    "nuxt": "^4.0.3",
     "typescript": "5.7.3",
     "vitest": "^2.1.9",
     "vue-tsc": "^2.2.12"
