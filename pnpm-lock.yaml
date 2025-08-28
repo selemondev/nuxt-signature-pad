@@ -37,8 +37,8 @@ importers:
         specifier: ^22.18.0
         version: 22.18.0
       '@types/signature_pad':
-        specifier: ^2.3.6
-        version: 2.3.6
+        specifier: ^4.0.0
+        version: 4.0.0
       changelogen:
         specifier: ^0.5.7
         version: 0.5.7(magicast@0.3.5)
@@ -2144,8 +2144,9 @@ packages:
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
 
-  '@types/signature_pad@2.3.6':
-    resolution: {integrity: sha512-v3j92gCQJoxomHhd+yaG4Vsf8tRS/XbzWKqDv85UsqjMGy4zhokuwKe4b6vhbgncKkh+thF+gpz6+fypTtnFqQ==}
+  '@types/signature_pad@4.0.0':
+    resolution: {integrity: sha512-uvyInmPxfG4fMz9DN7QSxNcF6O9tOtt98z6sMjP0SSFyiF7RxgfeSww+jVjkQtcvEBqR5bjVinMqxBDRP1nnmg==}
+    deprecated: This is a stub types definition. signature_pad provides its own type definitions, so you do not need this installed.
 
   '@types/triple-beam@1.3.5':
     resolution: {integrity: sha512-6WaYesThRMCl19iryMYP7/x2OVgCtbIVflDGFpWnb9irXI3UjYE4AzmYuiUKY1AJstGijoY+MgUszMgRxIYTYw==}
@@ -8147,7 +8148,9 @@ snapshots:
 
   '@types/resolve@1.20.2': {}
 
-  '@types/signature_pad@2.3.6': {}
+  '@types/signature_pad@4.0.0':
+    dependencies:
+      signature_pad: 5.0.10
 
   '@types/triple-beam@1.3.5': {}
 
