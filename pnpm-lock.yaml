@@ -28,8 +28,8 @@ importers:
         specifier: ^0.8.4
         version: 0.8.4(@nuxt/kit@3.18.1(magicast@0.3.5))(nuxi@3.17.2)(typescript@5.7.3)(vue-tsc@2.2.12(typescript@5.7.3))
       '@nuxt/schema':
-        specifier: ^3.18.1
-        version: 3.18.1
+        specifier: ^4.0.3
+        version: 4.0.3
       '@nuxt/test-utils':
         specifier: ^3.19.2
         version: 3.19.2(magicast@0.3.5)(typescript@5.7.3)(vitest@3.2.4(@types/node@22.18.0)(jiti@2.5.1)(terser@5.43.1)(yaml@2.8.1))
@@ -1096,10 +1096,6 @@ packages:
     peerDependencies:
       '@nuxt/kit': ^3.13.1
       nuxi: ^3.13.1
-
-  '@nuxt/schema@3.18.1':
-    resolution: {integrity: sha512-0237FcmSklop7qZUzldPn01wF6R1subQpkhgJKciONV3n4pu4DDYObTLzG9R3zGvXYRNfeMX38ktxVY2TMQ3AQ==}
-    engines: {node: ^14.18.0 || >=16.10.0}
 
   '@nuxt/schema@4.0.3':
     resolution: {integrity: sha512-acDigyy8tF8xDCMFee00mt5u2kE5Qx5Y34ButBlibLzhguQjc+6f6FpMGdieN07oahjpegWIQG66yQywjw+sKw==}
@@ -6485,15 +6481,6 @@ snapshots:
       - typescript
       - vue-tsc
 
-  '@nuxt/schema@3.18.1':
-    dependencies:
-      '@vue/shared': 3.5.20
-      consola: 3.4.2
-      defu: 6.1.4
-      pathe: 2.0.3
-      std-env: 3.9.0
-      ufo: 1.6.1
-
   '@nuxt/schema@4.0.3':
     dependencies:
       '@vue/shared': 3.5.20
@@ -7811,7 +7798,7 @@ snapshots:
 
   citty@0.1.6:
     dependencies:
-      consola: 3.4.2
+      consola: 3.3.3
 
   clean-regexp@1.0.0:
     dependencies:
@@ -10731,7 +10718,7 @@ snapshots:
       '@rollup/pluginutils': 5.1.4(rollup@3.29.5)
       chalk: 5.4.1
       citty: 0.1.6
-      consola: 3.4.2
+      consola: 3.3.3
       defu: 6.1.4
       esbuild: 0.19.12
       globby: 13.2.2
