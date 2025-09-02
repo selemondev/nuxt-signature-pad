@@ -41,7 +41,7 @@
     "@nuxt/module-builder": "^0.8.4",
     "@nuxt/schema": "^3.18.1",
     "@nuxt/test-utils": "^3.19.2",
-    "@types/node": "^22.18.0",
+    "@types/node": "^24.3.0",
     "@types/signature_pad": "^4.0.0",
     "changelogen": "^0.5.7",
     "eslint": "^9.34.0",
