@@ -2,7 +2,7 @@
   "name": "nuxt-signature-pad",
   "version": "1.5.0",
   "description": "Nuxt 3 based smooth signature drawing component ✨",
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.18.3",
   "repository": "selemondev/nuxt-signature-pad",
   "license": "MIT",
   "author": "Selemondev",
