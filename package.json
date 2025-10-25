@@ -31,7 +31,7 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.18.1",
+    "@nuxt/kit": "^4.0.0",
     "nanoid": "^5.1.5",
     "signature_pad": "^5.0.10"
   },
