@@ -21,7 +21,13 @@ export interface Bezier {
   startWidth: number
   endWidth: number
   length: () => number
-  _point: (t: number, start: number, c1: number, c2: number, end: number) => number
+  _point: (
+    t: number,
+    start: number,
+    c1: number,
+    c2: number,
+    end: number,
+  ) => number
 }
 
 export interface SignaturePadOptions {
@@ -88,7 +94,7 @@ export interface PointGroupOptions {
   penColor: string
   velocityFilterWeight: number
   compositeOperation: GlobalCompositeOperation
-};
+}
 
 export interface PointGroup extends PointGroupOptions {
   points: BasicPoint[]
@@ -179,12 +185,16 @@ export interface Signature {
     drawDot: (_a: { color: string, point: Point }) => void,
   ) => void
   _toSVG: () => string
-  addEventListener: (type: string, listener: (event: Event) => void, options?: { once?: boolean }) => void
+  addEventListener: (
+    type: string,
+    listener: (event: Event) => void,
+    options?: { once?: boolean },
+  ) => void
   addWaterMark: (obj: WaterMarkObj) => void
   save: (t: string) => void
   undo: () => void
   isCanvasEmpty: () => boolean
-  saveSignature: (format?: string) => string
+  saveSignature: (format?: string, quality?: number) => string
   clearCanvas: () => void
 }
 
