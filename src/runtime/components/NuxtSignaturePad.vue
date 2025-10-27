@@ -3,11 +3,17 @@
 <!-- eslint-disable @typescript-eslint/unified-signatures -->
 <!-- eslint-disable ts/ban-ts-comment -->
 <!-- eslint-disable ts/no-unused-expressions -->
-<script setup lang='ts'>
+<script setup lang="ts">
 import SignaturePad from 'signature_pad'
 import { nanoid } from 'nanoid'
 import { onMounted, onUnmounted, ref, watch, watchEffect } from 'vue'
-import type { CanvasOptions, Point, Props, Signature, WaterMarkObj } from '../types'
+import type {
+  CanvasOptions,
+  Point,
+  Props,
+  Signature,
+  WaterMarkObj,
+} from '../types'
 
 defineOptions({
   name: 'VueSignaturePad',
@@ -30,10 +36,10 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const emits = defineEmits<{
-  (e: 'beginStroke', val: string): void
-  (e: 'endStroke', val: string): void
-  (e: 'beforeUpdateStroke', val: string): void
-  (e: 'afterUpdateStroke', val: string): void
+  (e: 'beginStroke', val: Signature): void
+  (e: 'endStroke', val: Signature): void
+  (e: 'beforeUpdateStroke', val: Signature): void
+  (e: 'afterUpdateStroke', val: Signature): void
 }>()
 
 const canvasOptions = ref<CanvasOptions>({
@@ -52,7 +58,9 @@ function isCanvasEmpty(): boolean {
 }
 
 function saveSignature(format?: string) {
-  return format ? canvasOptions.value.signaturePad.toDataURL(format) : canvasOptions.value.signaturePad?.toDataURL()
+  return format
+    ? canvasOptions.value.signaturePad.toDataURL(format)
+    : canvasOptions.value.signaturePad?.toDataURL()
 }
 
 function clearCanvas() {
@@ -69,7 +77,7 @@ function undo() {
     canvasData.pop()
     canvasOptions.value.signaturePad.fromData(canvasData)
   }
-};
+}
 
 function addWaterMark(data: WaterMarkObj) {
   if (!(Object.prototype.toString.call(data) === '[object Object]')) {
@@ -83,7 +91,9 @@ function addWaterMark(data: WaterMarkObj) {
       sx: data.sx || 40,
       sy: data.sy || 40,
     }
-    const VCanvas = document.getElementById(canvasOptions.value.canvasUuid) as HTMLCanvasElement
+    const VCanvas = document.getElementById(
+      canvasOptions.value.canvasUuid,
+    ) as HTMLCanvasElement
     const ctx = VCanvas.getContext('2d')
     if (ctx) {
       ctx.font = data.font || '20px sans-serif'
@@ -112,45 +122,69 @@ function resizeCanvas(c: HTMLCanvasElement) {
   }
   const ratio = Math.max(window.devicePixelRatio || 1, 1)
   const reg = /px/
-  c.width = props.width && reg.test(props?.width) ? Number.parseInt(props?.width.replace(/px/g, '')) * ratio : c.offsetWidth * ratio
-  c.height = props.height && reg.test(props?.height) ? Number.parseInt(props?.height.replace(/px/g, '')) * ratio : c.offsetHeight * ratio
+  c.width
+    = props.width && reg.test(props?.width)
+      ? Number.parseInt(props?.width.replace(/px/g, '')) * ratio
+      : c.offsetWidth * ratio
+  c.height
+    = props.height && reg.test(props?.height)
+      ? Number.parseInt(props?.height.replace(/px/g, '')) * ratio
+      : c.offsetHeight * ratio
   c.getContext('2d')?.scale(ratio, ratio)
   clearCanvas()
   !props.clearOnResize && url !== undefined && fromDataURL(url)
-  props.waterMark && Object.keys(props.waterMark).length && addWaterMark(props.waterMark)
+  props.waterMark
+  && Object.keys(props.waterMark).length
+  && addWaterMark(props.waterMark)
 }
 
 function handleBeginStroke() {
-  return canvasOptions.value.signaturePad.addEventListener('beginStroke', () => {
-    emits('beginStroke', 'Signature started')
-  })
+  return canvasOptions.value.signaturePad.addEventListener(
+    'beginStroke',
+    () => {
+      emits('beginStroke', canvasOptions.value.signaturePad)
+    },
+  )
 }
 
 function handleEndStroke() {
   return canvasOptions.value.signaturePad.addEventListener('endStroke', () => {
-    emits('endStroke', 'Signature ended')
+    emits('endStroke', canvasOptions.value.signaturePad)
   })
 }
 
 function handleBeforeUpdateStroke() {
-  return canvasOptions.value.signaturePad.addEventListener('beforeUpdateStroke', () => {
-    emits('beforeUpdateStroke', 'Signature before update')
-  })
+  return canvasOptions.value.signaturePad.addEventListener(
+    'beforeUpdateStroke',
+    () => {
+      emits('beforeUpdateStroke', canvasOptions.value.signaturePad)
+    },
+  )
 }
 
 function handleAfterUpdateStroke() {
-  return canvasOptions.value.signaturePad.addEventListener('afterUpdateStroke', () => {
-    emits('afterUpdateStroke', 'Signature after update')
-  })
+  return canvasOptions.value.signaturePad.addEventListener(
+    'afterUpdateStroke',
+    () => {
+      emits('afterUpdateStroke', canvasOptions.value.signaturePad)
+    },
+  )
 }
 const controller = new AbortController()
 function draw() {
-  const canvas = document.getElementById(canvasOptions.value.canvasUuid) as HTMLCanvasElement
+  const canvas = document.getElementById(
+    canvasOptions.value.canvasUuid,
+  ) as HTMLCanvasElement
   if (!canvas) {
-    throw new Error(`Canvas element with ID ${canvasOptions.value.canvasUuid} not found.`)
-  };
+    throw new Error(
+      `Canvas element with ID ${canvasOptions.value.canvasUuid} not found.`,
+    )
+  }
   // @ts-ignore
-  canvasOptions.value.signaturePad = new SignaturePad(canvas, canvasOptions.value)
+  canvasOptions.value.signaturePad = new SignaturePad(
+    canvas,
+    canvasOptions.value,
+  )
   handleBeginStroke()
   handleEndStroke()
   handleBeforeUpdateStroke()
@@ -179,22 +213,31 @@ watchEffect(() => {
   canvasOptions.value.signaturePad.penColor = props.options.penColor
   // Update backgroundColor
   canvasOptions.value.backgroundColor = props.options.backgroundColor
-  canvasOptions.value.signaturePad.backgroundColor = props.options.backgroundColor
+  canvasOptions.value.signaturePad.backgroundColor
+    = props.options.backgroundColor
 })
 
-watch(() => props.minWidth, (newVal) => {
-  if (newVal) {
-    canvasOptions.value.minWidth = newVal
-    canvasOptions.value.signaturePad.minWidth = newVal
-  }
-}, { immediate: true })
+watch(
+  () => props.minWidth,
+  (newVal) => {
+    if (newVal) {
+      canvasOptions.value.minWidth = newVal
+      canvasOptions.value.signaturePad.minWidth = newVal
+    }
+  },
+  { immediate: true },
+)
 
-watch(() => props.maxWidth, (newVal) => {
-  if (newVal) {
-    canvasOptions.value.maxWidth = newVal
-    canvasOptions.value.signaturePad.maxWidth = newVal
-  }
-}, { immediate: true })
+watch(
+  () => props.maxWidth,
+  (newVal) => {
+    if (newVal) {
+      canvasOptions.value.maxWidth = newVal
+      canvasOptions.value.signaturePad.maxWidth = newVal
+    }
+  },
+  { immediate: true },
+)
 
 watch(
   () => props.disabled,
@@ -234,7 +277,7 @@ onUnmounted(() => {
   >
     <canvas
       :id="canvasOptions.canvasUuid"
-      style="width: 100%; height: 100%;"
+      style="width: 100%; height: 100%"
       :data-uid="canvasOptions.canvasUuid"
     />
   </div>
