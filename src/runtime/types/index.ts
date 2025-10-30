@@ -150,7 +150,7 @@ export interface Signature {
       callback?: ((error?: ErrorEvent) => void) | undefined
     },
   ) => void
-  toDataURL: (type?: string, encoderOptions?: any) => void
+  toDataURL: (type?: string, encoderOptions?: any) => string
   on: () => void
   off: () => void
   isEmpty: () => boolean
