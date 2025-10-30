@@ -5,7 +5,6 @@
 <!-- eslint-disable ts/no-unused-expressions -->
 <script setup lang="ts">
 import SignaturePad from 'signature_pad'
-import { nanoid } from 'nanoid'
 import { onMounted, onUnmounted, ref, watch, watchEffect } from 'vue'
 import type {
   CanvasOptions,
@@ -50,7 +49,7 @@ const canvasOptions = ref<CanvasOptions>({
   throttle: 16,
   backgroundColor: props.options.backgroundColor,
   penColor: props.options.penColor,
-  canvasUuid: `canvas${nanoid()}`,
+  canvasUuid: `canvas_${crypto.randomUUID()}`,
 })
 
 function isCanvasEmpty(): boolean {
