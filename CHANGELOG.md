@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.8.0
+
+[compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.7.0...v1.8.0)
+
+### 💅 Refactors
+
+- Bundle size ([26c0bff](https://github.com/selemondev/nuxt-signature-pad/commit/26c0bff))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v1.7.0
 
 [compare changes](https://github.com/selemondev/nuxt-signature-pad/compare/v1.6.0...v1.7.0)
