@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.2.0",
-    "nanoid": "^5.1.6",
     "signature_pad": "^5.1.1"
   },
   "devDependencies": {
