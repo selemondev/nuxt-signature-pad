@@ -100,3 +100,7 @@ You can check out all the available props and methods [here](https://github.com/
   ```
 
 </details>
+
+## License
+
+[MIT](./LICENSE) © [Selemon Brahanu](https://selemon.dev)
